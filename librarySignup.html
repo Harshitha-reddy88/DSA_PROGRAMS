@@ -1,0 +1,148 @@
+<html>
+   <head> 
+      <title>library signup</title>
+      <Style>
+        body{
+           background:url("https://tse4.mm.bing.net/th?id=OIP.ffpEjmruHin3ChUHyqRZRAHaEK&pid=Api&P=0");
+           background-repeat:no-repeat;
+           background-attachment: fixed;  
+	   background-size: cover;
+         }
+       .seconddiv{
+          display:flex;
+         }
+       .part2{
+          margin-left:80px;
+         }
+       .number1{
+          margin-top:-20px;
+          margin-left:250px;
+         }
+       .button{
+           margin-left:250px;
+           padding:10px 50px 10px 50px;
+           border-radius:10px;
+         }
+        .input{
+           padding:10px 90px 10px 10px;
+           border-radius:12px;
+           border:2px solid crimson;
+           color:crimson;
+           margin-top:10px;
+         }
+        .main{
+           margin-left:650px;
+           margin-top:100px;
+           background-color:black;
+           margin-right:480px;
+           opacity:0.8;
+           padding:20px 30px 100px 30px;
+           border-radius:20px;
+            
+         }
+        h1{
+         color:yellow;
+         
+        }
+      .div{
+          margin-top:50px;
+         }
+       .heading{
+           margin-left:250px;
+           color:crimson;
+         }
+       .button:hover{
+           background-color:crimson;
+           color:white;
+           border:2px solid crimson;
+         }
+       .para{
+          margin-left:180px;
+          color:white;
+          font-size:25px;
+        }
+       .color{
+          color:orangered;
+        }
+       
+          
+         
+      </style>
+   </head> 
+   <body>
+      <div class="main">
+      <h1 class="heading">SIGNUP</h1>
+      
+      <div class="seconddiv">
+        
+        <div>
+           <div>
+              <h1>Name<br>
+              <input  class="input name" type="text" placeholder="Name">
+           </div>
+           <div class="div">
+              <h1>UserNmae<br>
+              <input class="input username" type="text" placeholder="username">
+           </div>
+        </div>
+        
+        <div class="part2">
+           <div>
+              <h1>Password<br>
+              <input class="input password" type="password" placeholder="password">
+           </div>
+           <div class="div">
+              <h1>Email<br>
+              <input class="input" type="email" placeholder="email">
+           </div>
+         </div>
+      </div>
+           <div class="number1 div">
+              <h1>Phone Number<br>
+              <input class="input number" type="number" placeholder="phone number">
+           </div>
+           <div >
+            <button class="button div">SignUp</button>
+         </div>
+            <p class="para">already have an account ? <a  class="color"href="">login</a></p>
+         </div>
+         
+      </div>
+   </body> 
+   <script>
+     let button=document.querySelector(".button");
+     let results=JSON.parse(localStorage.getItem("library"))|| [];
+     button.onclick=function(){
+           let name=document.querySelector(".name");
+           let username=document.querySelector(".usename");
+           let password=document.querySelector(".password");
+           let email=document.querySelector(".email");
+           let number=document.querySelector(".number");
+           
+           if(name=="" || username=="" || password=="" || email=="" || number=="")
+           {
+           
+                alert("please fill your details");
+                return;
+           }
+           for(let i=0;i<results.length;i++)
+           {
+               if(results.username==username)
+               {
+                  alert("user already exist");
+                  return;
+                }
+              }
+              alert("login successfully");
+              window.location.href="libraryLogin.html";
+              
+              localStorage.setItem("library",JSON.stringify([...results,{name,username,password,email,number}]));
+     
+              console.log(localStorage.getItem("library"));
+        
+              
+           }
+              
+        
+   </script>                    
+</html>

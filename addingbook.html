@@ -1,0 +1,185 @@
+<html>
+   <head>
+      <title>addbook page</title>
+      <style>
+         .navbar{
+            margin-top:20px;
+            background-color:crimson;
+            padding:10px 0px 10px 10px;
+            border-radius:15px;
+         }
+        
+        .img{
+            width:70px;
+            border-radius:800px;
+            margin-left:30px;
+         }
+         .img:hover{
+             width:80px;
+             color:yellow;
+         }
+            
+        .flex{
+            display:flex;
+         }
+        .flex1{
+            display:flex;
+            margin-left:800px;
+            margin-top:15px;
+         }
+        
+        .view{
+            color:white;
+            font-size:25px;
+            text-decoration:none;
+         }
+        .view:hover{
+             font-size:30px;
+             color:yellow;
+         }
+            
+        .book{
+            color:white;
+            font-size:25px;
+            margin-left:150px;
+            text-decoration:none;
+         }
+        .book:hover{
+             font-size:30px;
+             color:yellow;
+         }
+            
+        .add{
+            color:white;
+            font-size:25px;
+            margin-left:150px;
+            text-decoration:none;
+         }
+        .add:hover{
+             font-size:30px;
+             color:yellow;
+         }
+            
+         .name{
+            margin-top:8px;
+            padding:10px 80px 10px 10px; 
+            border:crimson 3px solid;
+            color:crimson;
+            border-radius:10px;
+          }
+         .main{
+            display:flex;
+            background-color:red;
+            width:600px;
+            padding:0px 30px 30px 30px;
+            border-top-left-radius:20px;
+            border-top-right-radius:20px;
+            margin-left:600px;
+            margin-top:180px;
+            opacity:0.8;
+            
+          }
+         .heading{
+           color:yellow;
+          }
+           
+        .part2{
+           margin-left:50px;
+         }
+        .button{
+           margin-left:210px;
+           padding:10px 50px 10px 50px;
+           border-radius:10px;
+           border:2px solid crimson;
+         }
+        .button:hover{
+              background-color:crimson;
+              border:2px solid crimson;
+              color:white;
+          }
+        .btn{
+          background-color:black;
+          width:600px;
+          padding:0px 30px 30px 30px;
+          border-bottom-right-radius:20px;
+          border-bottom-left-radius:20px;
+          margin-left:600px;
+          opacity:0.8;
+          
+         }
+           
+        body{
+          background:url("https://tse4.mm.bing.net/th?id=OIP.ffpEjmruHin3ChUHyqRZRAHaEK&pid=Api&P=0");
+          background-repeat:no-repeat;
+          background-attachment: fixed;  
+	  background-size: cover;
+        }
+      </style>
+   </head>
+   <body>
+      <div class="navbar flex">
+         <div class="image">
+           <img  class="img" src="https://tse1.mm.bing.net/th?id=OIP.jeVfx14-a23XhQnKRmmwpAHaGe&pid=Api&P=0"  alt="error">
+         </div>
+         
+         <div class="flex1">
+         
+            <div class="viewbook">
+               <a  class="view" href="viewpage.html">VIEW BOOK</a>
+            </div>
+            
+            <div class="about">
+               <a class="book" href="">ABOUT A BOOK</a>
+            </div>
+            
+            <div class="addbook">
+               <a class="add" href="addingbook.html">ADD BOOK</a>
+            </div>
+            
+         </div>
+      </div>
+      <div class="main">
+      
+       <div class="part1">
+         <div>
+            <h2 class="heading">Book Name<br>
+            <input  class="name" type="text" placeholder="name of the book"/>
+         </div>
+         <div>
+            <h2 class="heading">Author<br>
+            <input class="name" type="text" placeholder="name of the author"/>
+         </div>
+         <div>
+            <h2 class="heading">Year<br>
+            <input class="name" type="text" placeholder="year of published"/>
+         </div>
+         <div>
+            <h2 class="heading">Book Price<br>
+            <input class="name" type="text" placeholder="price of the book"/>
+         </div>
+      </div>
+      
+      <div class="part2">
+         <div>
+            <h2 class="heading">Book Type<br>
+            <input class="name"  type="text" placeholder="type of the book"/>
+         </div>
+         <div>
+            <h2 class="heading">publisher<br>
+            <input class="name" type="text" placeholder="publisher of the book"/>
+         </div>
+         <div>
+            <h2 class="heading">serial number<br>
+            <input class="name" type="text" placeholder="serial number of the book"/>
+         </div>
+         <div>
+            <h2 class="heading">price<br>
+            <input class="name"  type="text" placeholder="price of the book"/>
+         </div>
+       </div>
+      </div>
+      <div class="btn">
+         <button class="button">ADD BOOK</button>
+      </div>
+   </body>
+</html>

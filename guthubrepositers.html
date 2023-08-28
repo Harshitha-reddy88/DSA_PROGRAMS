@@ -1,0 +1,161 @@
+<html>
+   <head>
+       <title>users page</title>
+       <style>
+           .navimg{
+           width:50px;
+           border-radius:1000px;
+          }
+        .main{
+           background-color:black;
+           padding:10px 10px 10px 10px;
+           border-radius:20px;
+          }
+        .imagediv{
+           background-color:white;
+           width:50px;
+           border-radius:30px;
+           margin-left:50px;
+           margin-top:10px;
+          }
+        .textdiv{
+           display:flex;
+           margin-left:800px;
+           margin-top:-50px;
+           
+          }
+        .color{
+           color:white;
+           margin-left:200px;
+           font-size:20px;
+           text-decoration:none;
+          }
+        .color:hover{
+             color:yellow;
+             font-size:21px;
+           }
+        .input{
+            margin-left:200px;
+            padding:10px 20px 10px 10px;
+            margin-top:20px;
+            border:2px solid black;
+            border-radius:5px;
+            margin-right:20px;
+           }
+        .button{
+           padding:5px 15px 5px 5px;
+           border-radius:5px;
+          }
+        .image{
+           width:200px;
+           text-align:center;
+           margin-left:100px;
+           
+          }
+        .name{
+           font-size:20px;
+           margin-left:20px;
+           color:white;
+           text-align:center
+          }
+        .section{
+           width:400px;
+           background-color:black;
+           padding:20px 0px 20px 0px;
+           border-radius:10px;
+           margin-top:50px;
+           margin-left:50px;
+          }
+        .number{
+            text-align:center;
+            font-size:20px;
+            color:white;
+          }
+       .section2{
+            display:flex;
+            flex-wrap:wrap;
+          }
+         
+         
+        
+       </style>
+   </head>
+   <body>
+     <div class="main">
+        <div class="imagediv">
+           <a href="githubhomepage.html"><img class="navimg" src="http://pngimg.com/uploads/github/github_PNG36.png" alt=""></a>
+     </div>
+        
+        <div class="textdiv">
+           <div>
+              <a class="color" href="githubusers.html"><p class="user color">USERS</p></a>
+           </div>
+           <div>
+              <a class="color" href=""><p class="repositeries color">REPOSITERIES</p></a>
+           </div>
+           <div>
+              <a class="color" href=""><p class="topics color">TOPIC</p></a>
+           </div>
+        </div>
+     </div>
+        <input  class="input" type="text" placeholder="users name">
+        <button  class="button" onclick="enter()">serach</button>
+        
+        <div class="results"></div>
+   </body>
+   
+     <script>
+        async function fetchData(url){
+                const response = await fetch(url);
+                const jsonData = await response.json()
+                return jsonData
+          }
+       async function enter(){
+               let result=document.querySelector(".results");
+               let inputs=document.querySelector(".input").value;
+               let storage=await fetchData(`https://api.github.com/search/repositories?q=${inputs}`);
+               let data=storage["items"];
+               console.log(data);
+
+               if(data.length!==0){
+                   for(let i=0;i<data.length;i++){
+                         let details=document.createElement("div");
+                         
+                         let img = document.createElement("img");
+                         img.setAttribute("src", data[i].avatar_url);
+                         img.setAttribute("class","image");
+                         
+                         let number = document.createElement("div");
+                         number.innerText = data[i].id;
+                         number.setAttribute("class","number");
+                         
+                         let username = document.createElement("div");
+                         username.innerText = data[i].login;
+                         username.setAttribute("class","name");
+                         
+                         let type = document.createElement("div");
+                         username.innerText = data[i].type;
+                         
+                         let language = document.createElement("div");
+                         username.innerText = data[i].language;
+                         
+                         details.setAttribute("class","section");
+                         details.append(img,username,number,type,language);
+                         
+                         result.setAttribute("class","section2");
+                         result.append(details);
+                         
+                         
+                    }
+               }
+               else{
+                 let divtag=document.createElement("div");
+                 let para=document.createElement("p");
+                 para.innerText="usernot found";
+                 divtag.append(para);
+                 results.append(divtag);
+              }
+          }
+     </script>
+   
+</html>

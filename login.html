@@ -1,0 +1,102 @@
+<html>
+   <head>
+      <title>loginpage</title>
+      <style>
+          body{
+             background:url("https://wallpaperboat.com/wp-content/uploads/2019/10/free-website-background-07.jpg");
+           }
+         .main{
+            margin-left:730px;
+            margin-top:50px;
+            margin-right:650px;
+            padding-top:50px;
+            padding-left:20px;
+            padding-bottom:50px;
+          }
+         .username{
+             padding:10px 40px 10px 10px;
+             font-size:20px;
+             border:3px solid deepskyblue;
+             color:deeppink;
+             border-radius:10px;
+          }
+         .password{
+             padding:10px 40px 10px 10px;
+             font-size:20px;
+             border:3px solid deepskyblue;
+             color:blue;
+             border-radius:10px;
+             margin-top:20px;
+          }
+         .submit{
+            margin-left:110px;
+            margin-top:20px;
+            padding:10px 30px 10px 30px;
+            border:3px solid deepskyblue;
+            color:deeppink;
+           }
+         .heading{
+             text-align:center;
+             color:deeppink;
+             margin-top:30px;
+             font-size:50px;
+           }
+         .signup{
+             color:tomato;
+           }
+         .para{
+            font-size:18px;
+            margin-left:200px;
+           }
+         .forgot{
+            margin-top:20px;
+            font-size:20px;
+            
+           }
+      </style>
+   </head>
+   <body>
+     <h1 class="heading">** <u>login page</u> **<h1>
+      <div class="main">
+        <div>
+           <input class="username" type="text" placeholder="userName" />
+        </div>
+        <div>
+           <input class="password" type="password" placeholder="password" />
+        </div>
+        <div>
+           <button class="submit">SUBMIT</button>
+        </div>
+        <a  class="forgot" href="forgotpassword">forgot password</a>
+      </div>
+   </body>
+   <script>
+      let storage=JSON.parse(localStorage.getItem("data"))||[];
+      
+      let button=document.querySelector(".submit"); 
+      
+      button.onclick=function()
+      {
+              let username=document.querySelector(".username").value;
+              let password=document.querySelector(".password").value;
+              if(username=="" &&  password=="")
+              {
+                   alert("username and password should not be empty")
+                   return;
+              }
+              for(let i=0;i<storage.length;i++)
+              {
+                    if(storage[i].username === username && storage[i].password === password)
+                    {
+                             alert("login succed");
+                             localStorage.setItem("Newdata",JSON.stringify(storage[i]));
+                             window.location.href="dashboard.html";
+                             return;
+                     }
+              
+              }
+              alert("login failed");
+       }
+            
+   </script>
+</html>

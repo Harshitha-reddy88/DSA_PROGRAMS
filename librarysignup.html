@@ -1,0 +1,134 @@
+<html>
+   <head>
+      <title>singUp page</title>
+      <style>
+         body{
+           background:url("https://www.pixelstalk.net/wp-content/uploads/2016/08/Desktop-Best-Background-Images.jpg");
+           }
+         .main{
+            margin-left:700px;
+            margin-top:50px;
+            margin-right:650px;
+            padding-top:50px;
+            padding-left:50px;
+            padding-bottom:50px;
+          }
+         .name{
+             padding:10px 40px 10px 10px;
+             font-size:20px;
+             border:3px solid mediumblue;
+             color:mediumblue;
+             border-radius:10px;
+          }
+         .username{
+             padding:10px 40px 10px 10px;
+             font-size:20px;
+             border:3px solid mediumblue;
+             color:mediumblue;
+             margin-top:10px;
+             border-radius:10px;
+          }
+         .password{
+             padding:10px 40px 10px 10px;
+             font-size:20px;
+             border:3px solid mediumblue;
+             color:mediumblue;
+             margin-top:10px;
+             border-radius:10px;
+          }
+         .email{
+             padding:10px 40px 10px 10px;
+             font-size:20px;
+             border:3px solid mediumblue;
+             color:mediumblue;
+             margin-top:10px;
+             border-radius:10px;
+          }
+         .number{
+             padding:10px 40px 10px 10px;
+             font-size:20px;
+             border:3px solid mediumblue;
+             color:mediumblue;
+             margin-top:10px;
+             border-radius:10px;
+          }
+         .button{
+            margin-left:100px;
+            margin-top:10px;
+            padding:10px 30px 10px 30px;
+            border:3px solid mediumblue;
+            color:mediumblue;
+           }
+         .heading{
+            text-align:center;
+            color:deeppink;
+            font-size:50px;
+          }
+         .login{
+            font-size:30px;
+            color:yellow;
+           }
+        
+            
+      </style>
+   </head>
+   <body>
+      <h1 class="heading">** <u>signup page</u> **</h1>
+      <div class="main">
+        <div>
+          <input class="name" type="text" placeholder="Name" />
+        </div>
+        <div>
+          <input class="username" type="text" placeholder="Username" />
+        </div>
+        <div>
+          <input class="password" type="password" placeholder="Password" />
+        </div>
+        <div>
+          <input class="email" type="text" placeholder="email" />
+        </div>
+        <div>
+          <input class="number" type="number" placeholder="number" />
+        </div>
+        <div>
+           <button class="button">CREATE</button>
+        </div>
+        <p class="login">alredy have an account? <a href="loginform.html"> Login </a></p>
+   </body>
+   <script>
+     let button=document.querySelector(".button");
+     
+     let storage=JSON.parse(localStorage.getItem("data"))||[];
+     
+     button.onclick=function(){
+     
+          let name=document.querySelector(".name").value;
+          let username=document.querySelector(".username").value;
+          let password=document.querySelector(".password").value;
+          let email=document.querySelector(".email").value;
+          let number=document.querySelector(".number").value;
+          if(name=="" || username=="" || password=="" || email=="" || number=="")
+          {
+                 alert("please fill your details");
+                 return;
+          }
+    //condition to check the user exixts or not
+    for(let i=0;i<storage.length;i++){
+        if(storage[i].username==username){
+             alert("user already exists")
+             return;
+          }
+       }
+          alert("account is created sucessfully");
+          window.location.href="loginform.html";
+        
+        
+        
+        localStorage.setItem("data",JSON.stringify([...storage,{name,username,password,email,number}]));
+     
+        console.log(localStorage.getItem("data"));
+        
+        }
+      
+   </script>
+</html>

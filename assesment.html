@@ -1,0 +1,91 @@
+<html>
+  <head>
+     <title>localStorage</title>
+     <style>
+        .name
+        {
+          margin-bottom:20px;
+          padding:10px 50px 10px 10px;
+        }
+        .username
+        {
+          margin-bottom:20px;
+          padding:10px 50px 10px 10px;
+        }
+        .email
+        {
+          margin-bottom:20px;
+          padding:10px 50px 10px 10px;
+        }
+        .number
+        {
+          margin-bottom:20px;
+          padding:10px 50px 10px 10px;
+        }
+        .main
+        {
+           margin-left:800px;
+           margin-top:20px;
+        }
+        .btn
+        {
+           margin-left:80px;
+        }
+     </style>
+  </head>
+  <body>
+  
+     <div class="main">
+       <div>
+          <input  class="name" type="text" placeholder="Name"/>
+       </div>
+       <div>
+          <input class="username" type="text" placeholder="username"/>
+       </div>
+       <div>
+          <input  class="email" type="text" placeholder="email"/>
+       </div>
+       <div>
+          <input class="number" type="number" placeholder="phonenumber"/>
+       </div>
+       <div>
+         <button class="btn">SUBMIT</button>
+       </div>
+       <div class="datadiv"></div>
+   </div>
+   
+  </body>
+  <script>
+       let datadiv=document.querySelector("datadiv");
+       let button=document.querySelector(".btn");
+       //button.onclick=function()
+       //{
+           //let name=document.querySelctor(".name").value;
+           //let userName=document.querySelector(".username").value;
+           //let email=document.querySelector(".email").value;
+           //let number=document.querySelector(".number").value;
+           
+           //let namediv=document.createElement("div");
+           //namediv.append(name);
+           
+           //let userdiv=document.createElemnt("div");
+           //userdiv.append(userName);
+           
+           //let emaildiv=document.craeteElement("div");
+          //emaildiv.append(email);
+           
+           //let numberdiv=document.createElement("div");
+           //numberdiv.append(number);
+           //datadiv.append(namediv,userdiv,emaildiv,numberdiv); 
+           button.onclick=function(){
+           let firstname=document.querySelector(".name").value;
+           let lastname=document.querySelector(".username").value;
+           let divtag=document.createElement("div");
+           let divtag1=document.createElement("div");
+           divtag.append(firstname);
+           divtag1.append(lastname);
+           datadiv.append(divtag,divtag1);
+       }
+       //}
+  </script>
+</html>

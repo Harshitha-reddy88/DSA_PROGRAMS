@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="temp">Welcome to the BootCamp0</h1>
+    <!-- <h1 class="temp">Welcome to the BootCamp1</h1>
+    <h1 class="temp">Welcome to the BootCamp2</h1>
+    <h1 class="temp">Welcome to the BootCamp3</h1>
+    <h1 class="temp">Welcome to the BootCamp4</h1> -->
+
+        <input class="username" type="text" placeholder="Enter your name" />
+        <input class="password" type="password" placeholder="Enter your password" />
+        <input type="submit" onclick="handleForm()" value="submit" />
+
+</body>
+<script type="text/javascript">
+
+    // let H1Tag = document.querySelectorAll("#temp");
+    // for(let i = 0; i < H1Tag.length; i++){
+    //     H1Tag[i].textContent = "kirankumar" + (i)
+    //     console.log(H1Tag[i].textContent);
+    // }
+
+    //ClassName
+    // let Tag = document.getElementsByClassName("temp");
+    // console.log(Tag);
+
+
+    // TagName
+    // let TagController = document.getElementsByTagName("h1");
+    // console.log(TagController);
+
+
+    // Creating an Element
+    // let divTag = document.createElement("div");
+    // divTag.innerText = "jtd";
+    // document.querySelector("body").append(divTag);
+
+
+    // let inputTag = document.createElement("input");
+    // inputTag.className = "temp";
+    // inputTag.type = "text";
+    // inputTag.placeholder = "Enter your Name";
+    // document.body.append(inputTag);
+
+    // event Listerner
+    // let divTag = document.createElement("div");
+    // divTag.innerHTML = `<p>Welcome to the paragraph</p>`;
+    // divTag.style.backgroundColor = "aqua";
+    // divTag.style.fontSize="20px";
+
+    // divTag.onclick = function() {
+    //     divTag.style.backgroundColor = "aqua";
+    //     divTag.textContent = "Welcome to the paragraph";
+    //     divTag.style.fontSize="30px";
+    // }
+
+    // let catMove = "mousemove"
+    // divTag.addEventListener(catMove,function(){
+    //     divTag.style.backgroundColor = "yellow";
+    //     divTag.style.fontSize="30px";
+    //     divTag.textContent = "welcome to the dog's world";
+    //     divTag.style.color = "white";
+    // })
+    // document.querySelector("body").append(divTag);
+    // console.log(divTag);
+
+    // Local Storage;
+    // console.log(localStorage);
+    // localStorage.setItem("name","jtd");
+    // localStorage.setItem("age",8);
+    // let getValue = localStorage.getItem("name");
+    // console.log(localStorage);
+    // localStorage.removeItem("age");
+    // console.log(localStorage);
+    // localStorage.clear();
+
+    // setTimeout
+    // console.log("before");
+    // setTimeout(function(){
+    //     console.log("inside");
+    // },3000);
+    // console.log("after");
+
+    //setInterval
+    // console.log("before");
+    // let count = 0;
+    // setInterval(function(){
+    //     if(count <= 3){
+    //         console.log("inside",count);
+    //     }else{
+    //         clearInterval();
+    //     }
+    //     count += 1;
+    // },1000);
+    // console.log("after");
+    function handleForm() {
+        let resultantdata = JSON.parse(localStorage.getItem("data")) || [];
+        let username = document.querySelector(".username").value;
+        let password = document.querySelector(".password").value;
+        localStorage.setItem("data",JSON.stringify([...resultantdata,{username,password}]));
+        console.log(localStorage)
+    }
+    // callback function
+    // function outer(inner){
+    //     console.log(inner(5,6));
+    // }
+    // function inner(a,b){
+    //     return a + b;
+    // }
+    // outer(inner);
+
+    // higher order functions
+    // function outer(inner){
+    //     return inner(5,6);
+    // }
+    // function inner(a,b){
+    //     return a + b;
+    // }
+    // console.log(outer(inner));
+    
+    // forEach
+    let arr = [1,2,3,4,5,6];
+    arr.forEach(function(_,currentIndex){
+        console.log(currentIndex);
+    })
+
+    //map 
+    arr.map((currentValue,currentIndex,sourceArray)=> {
+        console.log(currentValue,currentIndex,sourceArray);
+    })
+
+    // filter
+
+    let temp = arr.filter((currentValue,currentIndex)=>{
+        if(currentIndex % 2 == 0) {
+            return currentValue;
+        }
+    })
+    console.log(temp);
+    
+    // reduce 
+    arr.reduce((acc,currentValue,currentIndex,sourceArray)=>{
+        return (acc,currentValue)=>{
+            console.log(acc,currentIndex,sourceArray);
+        };
+    },{})
+</script>
+</html>

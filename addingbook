@@ -1,0 +1,72 @@
+<html>
+   <head>
+      <title>addbook page</title>
+      <style>
+         .name{
+            margin-top:8px;
+            padding:10px 80px 10px 10px; 
+          }
+         .main{
+            display:flex;
+            background-color:balck;
+            width:200px;
+          }
+        .part2{
+           margin-left:50px;
+         }
+        .button{
+           margin-left:210px;
+           padding:10px 50px 10px 50px;
+         }
+        body{
+          background:url("https://tse4.mm.bing.net/th?id=OIP.ffpEjmruHin3ChUHyqRZRAHaEK&pid=Api&P=0");
+          background-repeat:no-repeat;
+          background-attachment: fixed;  
+	  background-size: cover;
+        }
+      </style>
+   </head>
+   <body>
+      <div class="main">
+      
+       <div class="part1">
+         <div>
+            <h2>Book Name<br>
+            <input  class="name" type="text" placeholder="name of the book"/>
+         </div>
+         <div>
+            <h2>Author<br>
+            <input class="name" type="text" placeholder="name of the author"/>
+         </div>
+         <div>
+            <h2>Year<br>
+            <input class="name" type="text" placeholder="year of published"/>
+         </div>
+         <div>
+            <h2>Book Price<br>
+            <input class="name" type="text" placeholder="price of the book"/>
+         </div>
+      </div>
+      
+      <div class="part2">
+         <div>
+            <h2>Book Type<br>
+            <input class="name"  type="text" placeholder="type of the book"/>
+         </div>
+         <div>
+            <h2>publisher<br>
+            <input class="name" type="text" placeholder="publisher of the book"/>
+         </div>
+         <div>
+            <h2>serial number<br>
+            <input class="name" type="text" placeholder="serial number of the book"/>
+         </div>
+         <div>
+            <h2>price<br>
+            <input class="name"  type="text" placeholder="price of the book"/>
+         </div>
+       </div>
+      </div>
+      <button class="button">ADD BOOK</button>
+   </body>
+</html>

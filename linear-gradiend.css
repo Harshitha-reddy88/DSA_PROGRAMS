@@ -1,0 +1,41 @@
+body{
+          background: linear-gradient(to right, purple,mediumvioletred,tomato);
+        }
+       input{
+          font-size:20px;
+          padding:5px 40px 10px 2px;
+          border:none;
+          background:none;
+          color:white;
+          border-bottom:lavenderblush 1px solid;
+          width:200px;
+        }
+      .div2{
+         margin-top:20px;
+         margin-left:830px;
+         
+       }
+      .div1{
+         margin-top:300px;
+         margin-left:830px;
+         
+       }
+     .login{
+         background:none;
+         border:1px solid lavenderblush;
+         color:white;
+         padding:10px 20px 10px 20px;
+         border-radius:5px;
+         margin-left:900px;
+         margin-top:30px;
+       }
+     .para{
+        margin-left:900px;
+        color:white;
+        margin-top:30px;
+        
+       }
+     .para1{
+        color:white;
+        font-size:12px;
+      }
